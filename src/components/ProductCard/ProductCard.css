@@ -1,0 +1,33 @@
+.product-card {
+  width: 400px;
+  margin: 2em auto;
+  /* box-shadow: 2px 5px 15px darkgrey; */
+  border-radius: 5px;
+  /* background-color: ; */
+}
+
+.product-card .p-c-body {
+  padding: 1rem;
+}
+
+.product-card .p-c-body * {
+  text-align: left;
+  margin-top: 15px;
+  color: dimgray;
+  font-size: 1rem;
+}
+
+.product-card .p-c-img {
+  height: 50vh;
+  width: 100%;
+  object-fit: contain;
+  background-color: #fff;
+}
+
+.product-card .p-c-body .p-c-title {
+  font-size: 1.2rem;
+}
+
+.product-card .p-c-body .p-c-price {}
+
+.product-card .p-c-body .p-c-desc {}
