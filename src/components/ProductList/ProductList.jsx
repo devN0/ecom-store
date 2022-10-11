@@ -1,10 +1,12 @@
 import './ProductList.css';
 import useApi from "../../hooks/useApi";
 import ProductCard from "../ProductCard";
+import { useParams } from 'react-router-dom';
 
-function ProductList({selectedCategory}) {
+function ProductList() {
+  const {categoryName} = useParams();
   
-  const {loading, error, data: products} = useApi(`https://fakestoreapi.com/products/category/${selectedCategory}`, []);
+  const {loading, error, data: products} = useApi(`https://fakestoreapi.com/products/category/${categoryName}`, []);
 
   return (
     <div className="product-list">

@@ -3,7 +3,7 @@
   margin: 2em auto;
   /* box-shadow: 2px 5px 15px darkgrey; */
   border-radius: 5px;
-  /* background-color: ; */
+  background-color: #1a242e;
 }
 
 .product-card .p-c-body {
@@ -13,12 +13,12 @@
 .product-card .p-c-body * {
   text-align: left;
   margin-top: 15px;
-  color: dimgray;
+  color: #fffa;
   font-size: 1rem;
 }
 
 .product-card .p-c-img {
-  height: 50vh;
+  height: 40vh;
   width: 100%;
   object-fit: contain;
   background-color: #fff;

@@ -1,12 +1,14 @@
-*{
-  padding: 0;
-  margin: 0;
-}
 .navbar {
   padding: 1rem;
-  margin-bottom: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  background-color: #1a242e;
+  font-family: Amazon Ember,
+    Amazon Arabic Ember,
+    Arial,
+    sans-serif !important;
+  font-size: 17px;
+  font-weight: 700;
 }
 .navbar .navbar-logo {
   height: 50px;
@@ -22,13 +24,16 @@
   margin: 0 .5rem;
   display: flex;
   align-items: center;
-  background-color: cadetblue;
-  color: #fff;
+  text-transform: capitalize;
+  color: #fffa;
   border-radius: .4rem;
   cursor: pointer;
   transition: .5s background-color;
 }
+.navbar .nav-links .nav-link--selected {
+  color: #fff;
+}
 .navbar .nav-links .nav-link:hover {
-  background-color:beige;
-  color: #000;
+  /* background-color:firebrick; */
+  color: #fff;
 }

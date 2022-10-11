@@ -1,19 +1,18 @@
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 import useApi from '../../hooks/useApi';
 import './Navbar.css';
 
-function Navbar({setSelectedCategory}) {
+function Navbar() {
   const {loading, error, data: categories} = useApi('https://fakestoreapi.com/products/categories', []);
 
-  const handleCategoryClick = useCallback( (category) => {
-    setSelectedCategory(category);
-  }, [setSelectedCategory]);
+  const history = useHistory();
 
   useEffect(()=>{
     if(!loading && categories.length > 0) {
-      setSelectedCategory(categories[0]);
+      history.push(`/products/${categories[0]}`);
     }
-  }, [loading, categories, setSelectedCategory]);
+  }, [loading, categories, history]);
 
   return (
     <div className="navbar">
@@ -27,12 +26,13 @@ function Navbar({setSelectedCategory}) {
                     <ul className='nav-links'>
                       {categories.map((category) => {
                         return (
-                          <li className='nav-link'
+                          <NavLink className='nav-link'
+                          activeClassName='nav-link--selected'
                           key={`category-${category}`}
-                          onClick={()=>handleCategoryClick(category)}
+                          to={`/products/${category}`}
                           >
                             {category}
-                          </li>
+                          </NavLink>
                         )
                       })}
                     </ul>
