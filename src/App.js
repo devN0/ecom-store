@@ -7,7 +7,7 @@ import Home from './components/Home';
 import { useState } from 'react';
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   return (
     <Router>

@@ -3,7 +3,9 @@ import useApi from "../../hooks/useApi";
 import ProductCard from "../ProductCard";
 
 function ProductList({selectedCategory}) {
+  
   const {loading, error, data: products} = useApi(`https://fakestoreapi.com/products/category/${selectedCategory}`, []);
+
   return (
     <div className="product-list">
       {loading ?

@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import useApi from '../../hooks/useApi';
 import './Navbar.css';
 
@@ -8,6 +8,12 @@ function Navbar({setSelectedCategory}) {
   const handleCategoryClick = useCallback( (category) => {
     setSelectedCategory(category);
   }, [setSelectedCategory]);
+
+  useEffect(()=>{
+    if(!loading && categories.length > 0) {
+      setSelectedCategory(categories[0]);
+    }
+  }, [loading, categories, setSelectedCategory]);
 
   return (
     <div className="navbar">
